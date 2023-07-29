@@ -54,33 +54,3 @@ if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.match
 }
 
 //form
-function validateForm() {
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const message = document.getElementById("message").value;
-
-  if (name.trim() === "") {
-    alert("Silakan masukkan nama Anda.");
-    return false;
-  }
-
-  if (email.trim() === "") {
-    alert("Silakan masukkan alamat email Anda.");
-    return false;
-  } else if (!validateEmail(email)) {
-    alert("Alamat email tidak valid.");
-    return false;
-  }
-
-  if (message.trim() === "") {
-    alert("Silakan masukkan pesan Anda.");
-    return false;
-  }
-
-  return true;
-}
-
-function validateEmail(email) {
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailPattern.test(email);
-}
